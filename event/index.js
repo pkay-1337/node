@@ -1,0 +1,2 @@
+let EE = require('events');
+
