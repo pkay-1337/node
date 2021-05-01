@@ -9,15 +9,18 @@ const port = 9999;
 
 app.get('/', (req, res) => {
     if(req){
-        (function(){ rl.on('line',(line) => {
+        rl.on('line',(line) => {
             input = line;
             emitter.emit('typed');
         })
         pk = () => {res.end(input)};
         emitter.on('typed',()=>{
             pk();
-        });}())
+        });
     }
+    res.on('error',(err)=>{
+      let a = err;
+    })
 })
 
 app.listen(port, () => {
