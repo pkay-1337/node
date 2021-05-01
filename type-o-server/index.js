@@ -3,18 +3,10 @@ const readline = require('readline');
 const event = require('events');
 const rl = readline.createInterface({input: process.stdin});
 const app = ex();
-let input;
 const emitter = new event();
-
-
-
-
-
-
-
-
-
+let input;
 const port = 9999;
+
 app.get('/', (req, res) => {
     if(req){
         (function(){ rl.on('line',(line) => {
